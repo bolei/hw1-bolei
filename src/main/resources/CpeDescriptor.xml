@@ -8,9 +8,9 @@
         </collectionIterator>
     </collectionReader>
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
-        <casProcessor deployment="integrated" name="Simple Annotator">
+        <casProcessor deployment="integrated" name="hw1Annotator">
             <descriptor>
-                <import location="descriptor/simpleAnnotatorDescriptor.xml"/>
+                <import location="descriptor/aggregatedAnnotatorDescriptor.xml"/>
             </descriptor>
             <deploymentParameters/>
             <errorHandling>

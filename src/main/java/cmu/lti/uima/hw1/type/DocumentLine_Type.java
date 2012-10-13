@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Fri Oct 12 21:08:21 EDT 2012 */
+/* First created by JCasGen Fri Oct 12 23:50:43 EDT 2012 */
 package cmu.lti.uima.hw1.type;
 
 import org.apache.uima.jcas.JCas;
@@ -16,30 +16,30 @@ import org.apache.uima.jcas.tcas.Annotation_Type;
 /** 
  * Updated by JCasGen Fri Oct 12 23:50:43 EDT 2012
  * @generated */
-public class GeneName_Type extends Annotation_Type {
+public class DocumentLine_Type extends Annotation_Type {
   /** @generated */
   protected FSGenerator getFSGenerator() {return fsGenerator;}
   /** @generated */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (GeneName_Type.this.useExistingInstance) {
+  			 if (DocumentLine_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = GeneName_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = DocumentLine_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new GeneName(addr, GeneName_Type.this);
-  			   GeneName_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new DocumentLine(addr, DocumentLine_Type.this);
+  			   DocumentLine_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new GeneName(addr, GeneName_Type.this);
+        } else return new DocumentLine(addr, DocumentLine_Type.this);
   	  }
     };
   /** @generated */
-  public final static int typeIndexID = GeneName.typeIndexID;
+  public final static int typeIndexID = DocumentLine.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("cmu.lti.uima.hw1.type.GeneName");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("cmu.lti.uima.hw1.type.DocumentLine");
  
   /** @generated */
   final Feature casFeat_sentenceId;
@@ -48,32 +48,32 @@ public class GeneName_Type extends Annotation_Type {
   /** @generated */ 
   public String getSentenceId(int addr) {
         if (featOkTst && casFeat_sentenceId == null)
-      jcas.throwFeatMissing("sentenceId", "cmu.lti.uima.hw1.type.GeneName");
+      jcas.throwFeatMissing("sentenceId", "cmu.lti.uima.hw1.type.DocumentLine");
     return ll_cas.ll_getStringValue(addr, casFeatCode_sentenceId);
   }
   /** @generated */    
   public void setSentenceId(int addr, String v) {
         if (featOkTst && casFeat_sentenceId == null)
-      jcas.throwFeatMissing("sentenceId", "cmu.lti.uima.hw1.type.GeneName");
+      jcas.throwFeatMissing("sentenceId", "cmu.lti.uima.hw1.type.DocumentLine");
     ll_cas.ll_setStringValue(addr, casFeatCode_sentenceId, v);}
     
   
  
   /** @generated */
-  final Feature casFeat_name;
+  final Feature casFeat_content;
   /** @generated */
-  final int     casFeatCode_name;
+  final int     casFeatCode_content;
   /** @generated */ 
-  public String getName(int addr) {
-        if (featOkTst && casFeat_name == null)
-      jcas.throwFeatMissing("name", "cmu.lti.uima.hw1.type.GeneName");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_name);
+  public String getContent(int addr) {
+        if (featOkTst && casFeat_content == null)
+      jcas.throwFeatMissing("content", "cmu.lti.uima.hw1.type.DocumentLine");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_content);
   }
   /** @generated */    
-  public void setName(int addr, String v) {
-        if (featOkTst && casFeat_name == null)
-      jcas.throwFeatMissing("name", "cmu.lti.uima.hw1.type.GeneName");
-    ll_cas.ll_setStringValue(addr, casFeatCode_name, v);}
+  public void setContent(int addr, String v) {
+        if (featOkTst && casFeat_content == null)
+      jcas.throwFeatMissing("content", "cmu.lti.uima.hw1.type.DocumentLine");
+    ll_cas.ll_setStringValue(addr, casFeatCode_content, v);}
     
   
 
@@ -81,7 +81,7 @@ public class GeneName_Type extends Annotation_Type {
 
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
-  public GeneName_Type(JCas jcas, Type casType) {
+  public DocumentLine_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
@@ -90,8 +90,8 @@ public class GeneName_Type extends Annotation_Type {
     casFeatCode_sentenceId  = (null == casFeat_sentenceId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentenceId).getCode();
 
  
-    casFeat_name = jcas.getRequiredFeatureDE(casType, "name", "uima.cas.String", featOkTst);
-    casFeatCode_name  = (null == casFeat_name) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_name).getCode();
+    casFeat_content = jcas.getRequiredFeatureDE(casType, "content", "uima.cas.String", featOkTst);
+    casFeatCode_content  = (null == casFeat_content) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_content).getCode();
 
   }
 }

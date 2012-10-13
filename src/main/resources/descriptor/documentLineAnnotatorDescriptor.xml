@@ -2,10 +2,10 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
-  <annotatorImplementationName>cmu.lti.uima.hw1.cpe.annotator.SimpleAnnotator</annotatorImplementationName>
+  <annotatorImplementationName>cmu.lti.uima.hw1.cpe.annotator.DocumentLineAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>Simple Annotator</name>
-    <description/>
+    <name>DocumentLine Annotator</name>
+    <description>extract each line in the input document</description>
     <version>1.0</version>
     <vendor>Bo Lei</vendor>
     <configurationParameters/>
@@ -15,11 +15,13 @@
         <import location="typeSystem.xml"/>
       </imports>
     </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
     <capabilities>
       <capability>
         <inputs/>
         <outputs>
-          <type allAnnotatorFeatures="true">cmu.lti.uima.hw1.type.GeneName</type>
+          <type allAnnotatorFeatures="true">cmu.lti.uima.hw1.type.DocumentLine</type>
         </outputs>
         <languagesSupported/>
       </capability>
@@ -30,4 +32,5 @@
       <outputsNewCASes>false</outputsNewCASes>
     </operationalProperties>
   </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
 </analysisEngineDescription>
