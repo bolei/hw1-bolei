@@ -19,7 +19,7 @@
       <nameValuePair>
         <name>outFilePath</name>
         <value>
-          <string>test.out</string>
+          <string>src/main/resources/data/test.out</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
