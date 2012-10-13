@@ -1,3 +1,4 @@
+package cmu.lti.uima.hw1.cpe.annotator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
