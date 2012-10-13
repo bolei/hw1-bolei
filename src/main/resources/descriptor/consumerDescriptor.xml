@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<casConsumerDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <implementationName>cmu.lti.uima.hw1.cpe.Hw1CasConsumer</implementationName>
+  <processingResourceMetaData>
+    <name>File System Collection Reader</name>
+    <description>Reads files from the filesystem.</description>
+    <version>1.0</version>
+    <vendor>Bo Lei</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>outFilePath</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>outFilePath</name>
+        <value>
+          <string>test.out</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="descriptor.typeSystem"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">cmu.lti.uima.hw1.type.GeneName</type>
+        </inputs>
+        <outputs>
+          <type>cmu.lti.uima.hw1.type.GeneName</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>true</outputsNewCASes>
+    </operationalProperties>
+  </processingResourceMetaData>
+  <resourceManagerConfiguration/>
+</casConsumerDescription>
