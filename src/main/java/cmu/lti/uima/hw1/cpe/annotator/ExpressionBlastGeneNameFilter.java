@@ -4,7 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.resource.ResourceInitializationException;
@@ -13,7 +14,7 @@ public class ExpressionBlastGeneNameFilter extends AbstractGeneNameFilter {
 
   private static final String GENE_NAME_FILE = "geneNameFile";
 
-  private LinkedList<String> geneNames;
+  private Set<String> geneNames;
 
   @Override
   public void initialize(UimaContext aContext) throws ResourceInitializationException {
@@ -24,7 +25,7 @@ public class ExpressionBlastGeneNameFilter extends AbstractGeneNameFilter {
         File file = new File(geneNameFilePath);
 
         BufferedReader in = new BufferedReader(new FileReader(file));
-        geneNames = new LinkedList<String>();
+        geneNames = new HashSet<String>();
         String line;
         while ((line = in.readLine()) != null) {
           geneNames.add(line);
@@ -39,12 +40,13 @@ public class ExpressionBlastGeneNameFilter extends AbstractGeneNameFilter {
   @Override
   protected boolean isGeneName(String name) {
     String stemName = stemmer(name);
-    for (String oneName : geneNames) {
-      if (oneName.contains(stemName) || stemName.contains(oneName)) {
-        return true;
-      }
-    }
-    return false;
+    return geneNames.contains(stemName);
+    // for (String oneName : geneNames) {
+    // if (oneName.contains(stemName) || stemName.contains(oneName)) {
+    // return true;
+    // }
+    // }
+    // return false;
   }
 
 }
