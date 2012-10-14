@@ -6,6 +6,9 @@
     <delegateAnalysisEngine key="geneNameAnnotatorDescriptor">
       <import name="descriptor.geneNameAnnotatorDescriptor"/>
     </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="geneNameFilterAnnotatorDescriptor">
+      <import name="descriptor.geneNameFilterAnnotatorDescriptor"/>
+    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="documentLineAnnotatorDescriptor">
       <import name="descriptor.documentLineAnnotatorDescriptor"/>
     </delegateAnalysisEngine>
@@ -21,6 +24,7 @@
       <fixedFlow>
         <node>documentLineAnnotatorDescriptor</node>
         <node>geneNameAnnotatorDescriptor</node>
+        <node>geneNameFilterAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
