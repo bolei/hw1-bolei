@@ -30,8 +30,21 @@ public abstract class AbstractGeneNameFilter extends JCasAnnotator_ImplBase {
     }
   }
 
+  /**
+   * Determine if the input string is a gene name.
+   * 
+   * @param name
+   *          the name to be tested
+   * @return true if the input is a gene name
+   */
   protected abstract boolean isGeneName(String name);
 
+  /**
+   * a simple stemmer that drop the tail of plural nouns.
+   * 
+   * @param name
+   * @return
+   */
   protected String stemmer(String name) {
     if (name.endsWith("ies")) {
       return name.substring(0, name.lastIndexOf("ies")) + "y";

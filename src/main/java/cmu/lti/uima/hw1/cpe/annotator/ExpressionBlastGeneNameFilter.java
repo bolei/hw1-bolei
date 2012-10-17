@@ -10,6 +10,14 @@ import java.util.Set;
 import org.apache.uima.UimaContext;
 import org.apache.uima.resource.ResourceInitializationException;
 
+/**
+ * 
+ * This class takes a given string to see if it is a gene name by looking up in the local gene name
+ * list which is loaded into a hash set on program startup.
+ * 
+ * @author bolei
+ * 
+ */
 public class ExpressionBlastGeneNameFilter extends AbstractGeneNameFilter {
 
   private static final String GENE_NAME_FILE = "geneNameFile";

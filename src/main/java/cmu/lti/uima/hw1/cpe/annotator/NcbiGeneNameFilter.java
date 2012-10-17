@@ -27,6 +27,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+/**
+ * This class is used to test if a string is a gene name by looking up the online NCBI database 2
+ * steps are done:</br> - use the base query to get the list of IDs that are relevant to the query
+ * string</br> - looking up all the IDs in NCBI database using summary query and see if the string
+ * is presented in the returned XML string.
+ * 
+ * @author bolei
+ * 
+ */
 public class NcbiGeneNameFilter extends AbstractGeneNameFilter {
 
   private HttpClient httpclient;
@@ -49,6 +58,11 @@ public class NcbiGeneNameFilter extends AbstractGeneNameFilter {
     }
   }
 
+  /*
+   * (non-Javadoc)
+   * 
+   * @see cmu.lti.uima.hw1.cpe.annotator.AbstractGeneNameFilter#isGeneName(java.lang.String)
+   */
   protected boolean isGeneName(String name) {
     System.out.println("filtering:" + name);
     if (nameCache.contains(name)) {// first check the cache
@@ -57,14 +71,13 @@ public class NcbiGeneNameFilter extends AbstractGeneNameFilter {
 
     idList = new LinkedList<String>();
     // gname.removeFromIndexes();
-    try {
+    try {// do the first look up using Basic query.
       HttpGet httpNcbiBasicGet = new HttpGet(getNcbiBasicUrl(name));
       ResponseHandler<String> responseHandler = new BasicResponseHandler();
       String responseBody = httpclient.execute(httpNcbiBasicGet, responseHandler);
       sp.parse(new InputSource(new StringReader(responseBody)), new BasicQueryResultXmlHandler());
 
-      // System.out.println(getNcbiSummaryUrl(idList));
-
+      // do the second look up using summary query.
       HttpGet httpNcbiSummaryGet = new HttpGet(getNcbiSummaryUrl(idList));
       responseBody = httpclient.execute(httpNcbiSummaryGet, responseHandler);
       SummaryQueryResultXmlHandler sqrhandler = new SummaryQueryResultXmlHandler(name);
