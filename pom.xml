@@ -111,7 +111,7 @@
 		</dependency>
 	</dependencies>
 	<scm>
-		<connection>scm:git:git@github.com:bolei/hw0-bolei.git</connection>
-		<developerConnection>scm:git:git@github.com:bolei/hw0-bolei.git</developerConnection>
+		<connection>scm:git:git@github.com:bolei/hw1-bolei.git</connection>
+		<developerConnection>scm:git:git@github.com:bolei/hw1-bolei.git</developerConnection>
 	</scm>
 </project>
