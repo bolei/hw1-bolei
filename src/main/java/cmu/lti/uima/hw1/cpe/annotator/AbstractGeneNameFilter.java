@@ -11,6 +11,13 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 import cmu.lti.uima.hw1.type.GeneName;
 
+/**
+ * This class uses the method "isGeneName()" to test if the given GeneName annotation actually
+ * represents a gene name. All non-geneNames are removed from index of the Cas.
+ * 
+ * @author bolei
+ * 
+ */
 public abstract class AbstractGeneNameFilter extends JCasAnnotator_ImplBase {
 
   @Override

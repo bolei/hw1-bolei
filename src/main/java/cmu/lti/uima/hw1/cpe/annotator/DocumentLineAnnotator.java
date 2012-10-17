@@ -10,6 +10,15 @@ import org.apache.uima.jcas.JCas;
 
 import cmu.lti.uima.hw1.type.DocumentLine;
 
+/**
+ * This class is used to create for each line in the input document a DocumentLine annotation. This
+ * annotation contains the sentenceId and its context.
+ * 
+ * Once the annotation is created, it is put into the Cas index.
+ * 
+ * @author bolei
+ * 
+ */
 public class DocumentLineAnnotator extends JCasAnnotator_ImplBase {
 
   @Override

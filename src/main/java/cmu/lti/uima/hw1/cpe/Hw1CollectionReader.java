@@ -15,6 +15,12 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 import org.apache.uima.util.ProgressImpl;
 
+/**
+ * This is the collection reader of the CPE. It reads the input file, put entire text into a Cas.
+ * 
+ * @author bolei
+ * 
+ */
 public class Hw1CollectionReader extends CollectionReader_ImplBase {
 
   private static final String PARAM_INPUTDIR = "InputFilePath";

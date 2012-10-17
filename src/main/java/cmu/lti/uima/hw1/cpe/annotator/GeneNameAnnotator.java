@@ -16,6 +16,14 @@ import org.apache.uima.resource.ResourceInitializationException;
 import cmu.lti.uima.hw1.type.DocumentLine;
 import cmu.lti.uima.hw1.type.GeneName;
 
+/**
+ * This annotator uses Stanford part of speech annotator to annotate the potential gene names from
+ * DocumentLine annotation and creates a GeneName annotation which contains the sentece Id and gene
+ * name, put it into the Cas index.
+ * 
+ * @author bolei
+ * 
+ */
 public class GeneNameAnnotator extends JCasAnnotator_ImplBase {
 
   private PosTagNamedEntityRecognizer posTaggerAnno;
