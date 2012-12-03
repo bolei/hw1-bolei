@@ -20,7 +20,7 @@
       <nameValuePair>
         <name>geneNameFile</name>
         <value>
-          <string>genenames.txt</string>
+          <string>data/genenames.txt</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>

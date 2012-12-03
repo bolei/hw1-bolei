@@ -19,7 +19,7 @@
       <nameValuePair>
         <name>outFilePath</name>
         <value>
-          <string>hw1-bolei.out</string>
+          <string>data/hw1-bolei.out</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
